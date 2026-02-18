@@ -1,6 +1,10 @@
 const STORAGE_PREFIX = "viewport-preview-"
-const STORAGE_KEY = STORAGE_PREFIX + "urls"
-const COLOR_MODE_KEY = STORAGE_PREFIX + "color-mode"
+const ENV_SUFFIX = (hostname => {
+  if (hostname === "localhost" || hostname === "127.0.0.1" || hostname === "") return "--local"
+  return "--live"
+})(window.location.hostname)
+const STORAGE_KEY = STORAGE_PREFIX + "urls" + ENV_SUFFIX
+const COLOR_MODE_KEY = STORAGE_PREFIX + "color-mode" + ENV_SUFFIX
 const MAX_HISTORY = 10
 const MIN_SIZE = 200
 const SELECTED_BORDER = ["border-green-400", "dark:border-green-600"]

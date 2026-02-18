@@ -42,7 +42,8 @@
     </style>
     <script>
       (function () {
-        const mode = localStorage.getItem("viewport-preview-color-mode") || "system"
+        const _envSuffix = (h => (h === "localhost" || h === "127.0.0.1" || h === "") ? "--local" : "--live")(location.hostname)
+        const mode = localStorage.getItem("viewport-preview-color-mode" + _envSuffix) || "system"
         if (mode === "dark" || (mode === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
           document.documentElement.classList.add("dark")
         }
