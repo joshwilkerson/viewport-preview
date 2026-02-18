@@ -2,6 +2,8 @@
 
 A simple, local HTML tool for previewing websites in mobile-sized popup windows.
 
+[🔗 Demo](https://joshwilkerson.github.io/viewport-preview/)
+
 ## Why?
 
 Browser DevTools can simulate mobile viewports, but this tool offers a cleaner workflow:
